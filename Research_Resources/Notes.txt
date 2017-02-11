@@ -1,2 +1,6 @@
 Notes
 1. Applications of AI
+  - Speech Recognition
+  - Face detection
+  - Face Recognition
+  - Autonomous Cars, etc. etc.
