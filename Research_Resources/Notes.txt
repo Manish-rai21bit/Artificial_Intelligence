@@ -4,3 +4,57 @@ Notes
   - Face detection
   - Face Recognition
   - Autonomous Cars, etc. etc.
+
+2. Foundation and History
+  - Philosophy
+  - Mathematics
+  - Economics (MDP)
+  - Neuroscience
+  - Pyschology
+  - Computer Engineering
+  - Control Theory
+  - Linguistic
+
+Week 2: Intelligent Agents and Uninformed Search
+  . Agent: An agent is anything that can be viewed as:
+    - perceiving it's environment through sensors and
+    - acting upon that environment through actuators.
+
+  . An agent (1)perceive, (2) think, (3) acts
+  . Agent = Architecture + Program
+
+  . Ex of Agent - Vacuum cleaner
+
+  * PEAS - Performance, Environment, Actuators, Sensors
+
+  # Environment types
+    - Fully observable vs partially observable
+    - Deterministic vs strategic vs Stochastis
+    - Static vs Dynamic, etc.
+
+  # Types of Intelligent Agent
+    - Simplex reflex
+      select an action based on current state
+    - Model based reflex agent
+      Handle partial observability by keeping track of part of the world it can't see now.
+    - Goal Based agent
+
+  # State space vs Search space
+    - State Space is the physical configuration
+    - Search space is an abstract configuration represented by a search tree or graph of possible solutions
+    - Search tree
+
+  # Search Strategies
+    - A strategy is defined by picking the order of node expansion
+    - Strategies are evaluated along following dimension:
+      . Completeness
+      . Time Complexity
+      . Space Complexity
+      . Optimality
+
+    - Time and Space complexity measurements
+      . b: maximum branching factor of search tree
+      . d: depth of solution
+      . m: maximum depth of state space
+
+    - Types of search - Uninformed and Informed

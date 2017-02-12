@@ -1,0 +1,40 @@
+# Path to go from one city to another
+
+# Tree Search algorithm.
+function tree-search(initialState, goalTest)
+    returns SUCCESS or FAILURE
+
+    INITIALIZE FRONTIER WITH initialState
+
+    WHILE NOT FRONTIER.isEMPTY():
+        STATE =FRONTIER.REMOVE()
+
+        IF GOALTEST(STATE):
+            RETURN SUCCESS(STATE)
+
+        FOR NEIGHBOR IN STATE.NEIGHBORS():
+        FRONTIER.ADD(NEIGHBOR)
+
+    RETURN FAILURE
+
+
+# Graph search algorithm
+
+function graph-search(initialState, goalTest)
+    returns SUCCESS or FAILURE
+
+    INITIALIZE FRONTIER WITH initialState
+    explored = Set.new()
+
+    WHILE NOT FRONTIER.isEMPTY():
+        STATE =FRONTIER.REMOVE()
+        explored.add()
+
+        IF GOALTEST(STATE):
+            RETURN SUCCESS(STATE)
+
+        FOR NEIGHBOR IN STATE.NEIGHBORS():
+            if neighbor not in frontier union explored:
+                FRONTIER.ADD(NEIGHBOR)
+
+    RETURN FAILURE
