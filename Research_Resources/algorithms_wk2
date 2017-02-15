@@ -27,7 +27,7 @@ function graph-search(initialState, goalTest)
     explored = Set.new()
 
     WHILE NOT FRONTIER.isEMPTY():
-        STATE =FRONTIER.REMOVE()
+        state = frontier.REMOVE()
         explored.add()
 
         IF GOALTEST(STATE):
@@ -38,3 +38,45 @@ function graph-search(initialState, goalTest)
                 FRONTIER.ADD(NEIGHBOR)
 
     RETURN FAILURE
+
+
+# Breadth first search
+function BREADTH-FIRST-SEARCH(initialState, goalTest)
+  returns SUCCESS or FAILURE:
+
+  frontier = Queue.new(initialState)
+  explored = Set.new()
+
+  while not frontier.isEmpty():
+    state = frontier.dequeue()
+    explored.add(state)
+
+    if goalTest(state):
+      return SUCCESS(state)
+
+    for neighbor in state.neighbors():
+      if neighbor not in frontier union explored:
+        frontier.enqueue(state)
+
+  return FAILURE
+
+
+# Depth-First Search
+function DEPTH-FIRST-SEARCH(initialState, goalTest)
+  returns SUCCESS or FAILURE:
+
+  frontier = Stack.new(initialState)
+  explored = Set.new()
+
+  while not frontier.isEmpty():
+    state = frontier.pop()
+    explored.add(state)
+
+    if goalTest(state):
+      return SUCCESS(state)
+
+    for neighbor in state.neighbors():
+      if neighbor not in frontier union explored:
+        frontier.push(state)
+
+  return FAILURE

@@ -58,3 +58,21 @@ Week 2: Intelligent Agents and Uninformed Search
       . m: maximum depth of state space
 
     - Types of search - Uninformed and Informed
+
+    - Uninformed Search
+      a. Breadth - first search (BFS)
+      b. Depth first search (DFS)
+      c. Depth limited search
+      d. Iterative deepening search
+      e. uniform cost search
+
+      # Breadth first search
+        . Time 1+b+b^2..b^d = O(b^d)
+        . Space  O(b^d)
+        . implementation: fringe: FIFO(Queue)
+        . Time and Space is exponential
+
+      # Depth-First Search
+        . Time  1+b+b^2+..+b^m = O(b^m)
+        . Space O(b*m)
+        . Implementation LIFO (Stack)
