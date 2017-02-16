@@ -76,3 +76,12 @@ Week 2: Intelligent Agents and Uninformed Search
         . Time  1+b+b^2+..+b^m = O(b^m)
         . Space O(b*m)
         . Implementation LIFO (Stack)
+
+      # Iterative Deepening
+        . Combines the benefits of BFS and DFS
+        . Applied DLS (depth limit search) with increasing limits
+        . Iteratively increase the search limit until the depth of the shallowest solution d is reached
+
+      # Uniform-cost search
+        . the arc in the search graph may have weights.
+        . we want to find the cheapest route

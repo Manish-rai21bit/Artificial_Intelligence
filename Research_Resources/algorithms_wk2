@@ -4,12 +4,12 @@
 function tree-search(initialState, goalTest)
     returns SUCCESS or FAILURE
 
-    INITIALIZE FRONTIER WITH initialState
+    INITIALIZE frontier WITH initialState
 
-    WHILE NOT FRONTIER.isEMPTY():
-        STATE =FRONTIER.REMOVE()
+    while not frontier.isEMPTY():
+        state = frontier.REMOVE()
 
-        IF GOALTEST(STATE):
+        if goalTest(State):
             RETURN SUCCESS(STATE)
 
         FOR NEIGHBOR IN STATE.NEIGHBORS():
@@ -80,3 +80,30 @@ function DEPTH-FIRST-SEARCH(initialState, goalTest)
         frontier.push(state)
 
   return FAILURE
+
+# Depth Limit Search
+
+
+
+# Uniform Cost Search
+
+  function UNIFORM-COST-SEARCH(initialState, goalTest)
+    returns SUCCESS or FAILURE: /* cost f(n) =g(n) */
+
+    frontier = Heap.new(initialState)
+    explored = Set.new()
+
+    while not frontier.isEmpty():
+      state = frontier.deleteMin()
+      explored.add(state)
+
+      if goalTest(state):
+        return SUCCESS(state)
+
+      for neighbor in state.neighbors():
+        if neighbor not in frontier union explored:
+          explored.insert(state)
+        else if neighbor in frontier:
+          frontier.decreaseKey(neighbor)
+
+    return FAILURE
