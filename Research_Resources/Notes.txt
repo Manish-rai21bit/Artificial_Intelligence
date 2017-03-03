@@ -85,3 +85,15 @@ Week 2: Intelligent Agents and Uninformed Search
       # Uniform-cost search
         . the arc in the search graph may have weights.
         . we want to find the cheapest route
+        . Time - Suppose C* : cost of optimal solution
+            - Each action costs at least E
+            - The effective depth is roughly C*/E
+            - O(b^(C*/E)
+        . Space # of nodes with g <= optimal solution, O(b^(C*/E)
+        . It's complete and optimal
+
+
+    2.4 Toy Example
+
+      # God's number
+      # Graph Representation 
