@@ -1,0 +1,56 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Welcome to Overleaf --- just edit your LaTeX on the left,
+% and we'll compile it for you on the right. If you give
+% someone the link to this page, they can edit at the same
+% time. See the help menu above for more info. Enjoy!
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass{article} % Loads settings for the document layout
+
+% Preambel
+
+% The following settings are used for title generation and will show up in the
+% main document where the \maketitle command is set.
+\title{Pseudo-Inverse Matrix for Data Scientists}
+\author{Manish Rai}
+\date{2017-08-03}
+
+% Main document
+
+\begin{document} % The document starts here
+\maketitle% Creates the titlepage
+\pagenumbering{gobble} % Turns off page numbering
+\newpage % Starts a new page
+\pagenumbering{arabic} % Turns on page numbering
+
+\section{Intuition behind Pseudo-inverse}
+
+The inverse of a matrix depends on it's adjunct (adj(A)) and it's determinant (det(A)), and is given by $A^{-1} = \frac{adj(A)}{|A|}$. This formula shows that for the matrix A had to be a non-singular square matrix for it's inverse to exist.
+But we don't always encounter square matrix in our lives and $Moore-Penrose-Pseudoinverse$ of  a matrix gives a fair appromation to the inverse of a matrix.
+
+\section{Applications for a Data Scientists}
+\paragraph{}
+As a data scientists we come across problems which require computing the inverse of matrices.
+We have to deal with problem $Y = XW$, where Y is a column matrix of the response/target variables and X is the N x D marrix with N-datasets and D-dimensions.
+\paragraph{}
+Each regression problem tries to solve for the weights, W, that minimizes the expected error. And the elegent way tosolve for W is through linear algebra like
+\begin{equation}
+W_{ML} = X^{-1}Y
+\end{equation}
+where X inverse is the input matrix and depends on the size of the input dataset. This matrix is not necessarily a square matrix and hence to compute the weights we do need a Pseudoinverse matrix for X which is given as
+\begin{equation}
+X^{+} = (X^{T}X)^{-1}X^{T}
+\end{equation}
+\paragraph{}
+This was the simplest form of the regression equation. But, a majority of times we preprocess the imnput data (X) or do some feature extraction from it, before feeding it into the model.
+This extracted feature can be expressed in terms of the basis function $\phi(x)$.
+\paragraph{}
+In this case also, we need to calculate the inverse of basis $\phi(x)$ matrix. This is done easily through the pseudoinverse calculation.
+\begin{equation}
+\phi^{+} = (\phi^{T}\phi)^{-1}\phi^{T}
+\end{equation}
+\begin{equation}
+W_{ML} = (\phi^{T}\phi)^{-1}\phi^{T} Y
+\end{equation}
+\end{document} % The document ends here
